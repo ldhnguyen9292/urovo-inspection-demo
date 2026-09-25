@@ -59,6 +59,17 @@ class ScannerController(context: Context) {
         }
     }
 
+    /** Software trigger for the on-screen scan button. Result arrives through the same broadcast. */
+    fun triggerScan(): Boolean {
+        if (receiver == null) return false
+        return try {
+            scanManager?.startDecode() ?: false
+        } catch (t: Throwable) {
+            Log.w(TAG, "startDecode failed", t)
+            false
+        }
+    }
+
     fun stop() {
         val r = receiver ?: return
         receiver = null

@@ -1,4 +1,4 @@
-# Incoming Inspection Demo App (Urovo CT630) — Design
+# Incoming Inspection Demo App (Urovo DT630) — Design
 
 Date: 2026-09-25
 Status: Draft for review
@@ -9,13 +9,13 @@ Customer requirement (original):
 
 > PDA有掃描頭也有拍照功能。要開發一個APP，用在進貨檢驗，可以用掃描頭掃產品上面的Serial Number 條碼，也可以照相把進貨檢驗的產品做一個拍照存證；然後這一個Serial Number與照片要儲存到指定的資料夾路徑。請針對以上的需求，開發一個小程式DEMO。
 
-A demo Android app for the Urovo CT630 used during incoming goods inspection:
+A demo Android app for the Urovo DT630 used during incoming goods inspection:
 
 1. Scan a product's Serial Number (SN) barcode with the built-in scanner.
 2. Take one or more evidence photos of that product.
 3. Save the SN and photos into a user-specified folder on the PDA.
 
-**Success criteria:** on a real CT630, an operator can scan an SN, take photos,
+**Success criteria:** on a real DT630, an operator can scan an SN, take photos,
 and then find a folder named after the SN containing the photos and an
 `info.txt`, inside the folder they chose — browsable on a PC over USB.
 
@@ -41,7 +41,7 @@ and then find a folder named after the SN containing the photos and an
 |---|---|
 | Language | Kotlin |
 | UI | Jetpack Compose, single Activity |
-| Target device OS | Android 15 (API 35) — confirmed for the customer's CT630 |
+| Target device OS | Android 15 (API 35) — confirmed for the customer's DT630 |
 | minSdk / targetSdk / compileSdk | 26 (Android 8.0) / 35 / 35 |
 | Build | Android Studio (current stable), Gradle wrapper, AGP 8.x |
 | Urovo SDK | `platform_sdk_v4.1.0326.jar` from `github.com/urovosamples/SDK_ReleaseforAndroid`, added as `compileOnly` (real implementation is in the device firmware) |
@@ -159,7 +159,7 @@ All file I/O against the chosen folder, using the Storage Access Framework (`Doc
 ## 8. Testing
 
 - **JVM unit tests** for `Naming`: sanitizing, unique file names, `info.txt` build/parse round-trip.
-- **Manual test checklist on the CT630:**
+- **Manual test checklist on the DT630:**
   1. First launch → folder picker → choose/create `Documents/Inspection`.
   2. Press trigger on a barcode → SN appears.
   3. Take 2 photos → thumbnails appear; files and `info.txt` exist in `Inspection/<SN>/`.
@@ -172,7 +172,7 @@ All file I/O against the chosen folder, using the Storage Access Framework (`Doc
 
 ## 9. Risks
 
-- **CT630 not listed in the Urovo sample README.** `ScanManager` is Urovo's common API across its Android PDAs, so it is expected to work; verified in step 2 of the checklist. Fallback: manual entry / keyboard-wedge.
-- **Urovo SDK jar is from 2020 (v4.1.0326) while the device runs Android 15.** The jar is only used to compile; calls go to the `ScanManager` in the device firmware, which is current. Only long-standing methods are used (`openScanner`, `getOutputMode`, `switchOutputMode`, `getParameterString`, `stopDecode`). If Urovo supplies a newer jar for the CT630, it drops in unchanged.
+- **DT630 not listed in the Urovo sample README.** `ScanManager` is Urovo's common API across its Android PDAs, so it is expected to work; verified in step 2 of the checklist. Fallback: manual entry / keyboard-wedge.
+- **Urovo SDK jar is from 2020 (v4.1.0326) while the device runs Android 15.** The jar is only used to compile; calls go to the `ScanManager` in the device firmware, which is current. Only long-standing methods are used (`openScanner`, `getOutputMode`, `switchOutputMode`, `getParameterString`, `stopDecode`). If Urovo supplies a newer jar for the DT630, it drops in unchanged.
 - **Some Urovo units restrict app installs or developer options** via enterprise settings; may need the admin password from the supplier.
 - **SAF folder picker** on Android 11+ blocks choosing the root of storage or `Download/` itself; the user should pick or create a subfolder (e.g. `Documents/Inspection`). The first-run prompt will say so.

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** A Kotlin Android demo app for the Urovo CT630 that scans a Serial Number, takes evidence photos with the system camera, and saves them to `<chosen folder>/<SN>/` with an `info.txt`.
+**Goal:** A Kotlin Android demo app for the Urovo DT630 that scans a Serial Number, takes evidence photos with the system camera, and saves them to `<chosen folder>/<SN>/` with an `info.txt`.
 
 **Architecture:** Single-Activity Compose app. Pure-Kotlin `Naming` holds all naming/formatting rules (unit tested). `InspectionStorage` does SAF file I/O on a persisted tree URI. `ScannerController` wraps Urovo `ScanManager` in broadcast mode. `MainViewModel` owns UI state (SN and pending photo in `SavedStateHandle`), `MainActivity` wires lifecycle, folder picker and camera.
 
@@ -1271,7 +1271,7 @@ Expected: `BUILD SUCCESSFUL`; APK at `app-android/app/build/outputs/apk/debug/ap
 
 - [ ] **Step 1: Write README** covering: prerequisites (Android Studio or the CLI toolchain from Task 1), build command, install via `adb install -r`, first-run folder choice, output layout, and the on-device checklist below.
 
-On-device checklist (CT630):
+On-device checklist (DT630):
 1. First launch → folder picker opens in Documents → create/choose `Inspection` → location shows `Documents/Inspection`.
 2. Press the scan trigger on a barcode → SN appears in the field.
 3. Take 2 photos → thumbnails appear; `Inspection/<SN>/` holds 2 JPGs + `info.txt`.

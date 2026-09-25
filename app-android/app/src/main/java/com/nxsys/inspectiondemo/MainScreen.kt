@@ -51,6 +51,7 @@ fun MainScreen(
     onChooseFolder: () -> Unit,
     onSnChanged: (String) -> Unit,
     onSnSubmitted: () -> Unit,
+    onScan: () -> Unit,
     onTakePhoto: () -> Unit,
     onRetry: () -> Unit,
     onDone: () -> Unit,
@@ -96,25 +97,40 @@ fun MainScreen(
                 )
             }
 
-            OutlinedTextField(
-                value = state.sn,
-                onValueChange = onSnChanged,
-                label = { Text(stringResource(R.string.serial_number)) },
-                placeholder = { Text(stringResource(R.string.scan_hint)) },
-                singleLine = true,
-                readOnly = state.snLocked,
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-                keyboardActions = KeyboardActions(onDone = {
-                    focusManager.clearFocus()
-                    onSnSubmitted()
-                }),
-                trailingIcon = {
-                    if (state.sn.isNotEmpty() && !state.snLocked) {
-                        TextButton(onClick = { onSnChanged("") }) { Text(stringResource(R.string.clear)) }
-                    }
-                },
-                modifier = Modifier.fillMaxWidth(),
-            )
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                OutlinedTextField(
+                    value = state.sn,
+                    onValueChange = onSnChanged,
+                    label = { Text(stringResource(R.string.serial_number)) },
+                    placeholder = { Text(stringResource(R.string.scan_hint)) },
+                    singleLine = true,
+                    readOnly = state.snLocked,
+                    keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+                    keyboardActions = KeyboardActions(onDone = {
+                        focusManager.clearFocus()
+                        onSnSubmitted()
+                    }),
+                    trailingIcon = {
+                        if (state.sn.isNotEmpty() && !state.snLocked) {
+                            TextButton(onClick = { onSnChanged("") }) { Text(stringResource(R.string.clear)) }
+                        }
+                    },
+                    modifier = Modifier.weight(1f),
+                )
+                if (state.scannerAvailable) {
+                    Button(
+                        onClick = {
+                            focusManager.clearFocus()
+                            onScan()
+                        },
+                        enabled = state.canScan,
+                        modifier = Modifier.height(56.dp),
+                    ) { Text(stringResource(R.string.scan)) }
+                }
+            }
 
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Button(

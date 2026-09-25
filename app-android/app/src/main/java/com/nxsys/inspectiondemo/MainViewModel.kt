@@ -32,6 +32,7 @@ data class UiState(
     val canTakePhoto get() = hasFolder && !busy && !canRetry && Naming.sanitizeSn(sn) != null
     val snLocked get() = busy || canRetry
     val canFinish get() = !busy
+    val canScan get() = scannerAvailable && !snLocked
 }
 
 class MainViewModel(

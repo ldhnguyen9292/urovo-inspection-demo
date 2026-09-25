@@ -6,7 +6,7 @@
     <string name="choose_folder">選擇資料夾</string>
     <string name="choose_folder_hint">請選擇儲存資料夾。建議：開啟 Documents 並建立資料夾，例如「Inspection」。</string>
     <string name="serial_number">序號 (Serial Number)</string>
-    <string name="scan_hint">按掃描鍵掃描條碼，或手動輸入序號</string>
+    <string name="scan_hint">按「掃描」或掃描鍵，或手動輸入序號</string>
     <string name="clear">清除</string>
     <string name="scanner_unavailable">掃描器無法使用，請手動輸入序號</string>
     <string name="take_photo">拍照</string>
@@ -22,4 +22,5 @@
     <string name="discard_message">上一張照片尚未儲存，繼續將會刪除。若要保留，請按「重試」儲存。</string>
     <string name="discard_confirm">刪除</string>
     <string name="cancel">取消</string>
+    <string name="scan">掃描</string>
 </resources>

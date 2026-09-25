@@ -61,6 +61,7 @@ class MainActivity : ComponentActivity() {
                     onChooseFolder = ::launchFolderPicker,
                     onSnChanged = viewModel::onSnChanged,
                     onSnSubmitted = viewModel::onSnSubmitted,
+                    onScan = { scanner.triggerScan() },
                     onTakePhoto = ::launchCamera,
                     onRetry = viewModel::retrySave,
                     onDone = viewModel::onDone,

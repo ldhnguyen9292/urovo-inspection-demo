@@ -1,6 +1,6 @@
-# 進貨檢驗 Incoming Inspection — Urovo CT630 demo
+# 進貨檢驗 Incoming Inspection — Urovo DT630 demo
 
-Scan a product's Serial Number with the CT630 scanner, take evidence photos,
+Scan a product's Serial Number with the DT630 scanner, take evidence photos,
 and save them to a folder on the PDA:
 
 ```
@@ -28,7 +28,7 @@ export JAVA_HOME=/usr/local/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home
 
 `local.properties` points at `~/Library/Android/sdk`; change `sdk.dir` if your SDK lives elsewhere.
 
-## Install on the CT630
+## Install on the DT630
 
 1. On the PDA: Settings → About phone → tap **Build number** 7 times →
    Settings → System → Developer options → enable **USB debugging**.
@@ -47,7 +47,7 @@ Or copy `app-debug.apk` to the PDA and open it with the file manager
 1. First launch opens the folder picker in **Documents**. Create a folder such as
    `Inspection` and tap **Use this folder** → **Allow**. (Android does not allow
    choosing the storage root or `Download/` itself.)
-2. Press the scan trigger on the SN barcode, or type the SN.
+2. Tap **掃描** (Scan) or press the side scan key, aim the back of the device at the SN barcode — or type the SN.
 3. Tap **拍照** (Take photo) → the camera app opens → take the photo → confirm.
    The photo is saved immediately and shown as a thumbnail. Repeat as needed.
 4. Tap **完成 / 下一個** (Done / Next) for the next product.
@@ -75,6 +75,7 @@ app shows "scanner unavailable" and manual entry still works.
 
 1. First launch → folder picker opens in Documents → create/choose `Inspection` → location shows `Documents/Inspection`.
 2. Press the scan trigger on a barcode → SN appears in the field.
+   Also tap the on-screen **掃描** (Scan) button → the scanner light turns on → aim at a barcode → SN appears.
 3. Take 2 photos → thumbnails appear; `Inspection/<SN>/` holds 2 JPGs + `info.txt`.
 4. 完成 / 下一個 → scan the same SN → existing thumbnails shown; a 3rd photo appends; "First inspected" unchanged.
 5. Type an SN by hand → Done on keyboard → take photo → saved.

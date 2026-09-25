@@ -6,7 +6,7 @@
     <string name="choose_folder">Choose folder</string>
     <string name="choose_folder_hint">Choose a folder to save to. Tip: open Documents and create a folder such as \"Inspection\".</string>
     <string name="serial_number">Serial Number</string>
-    <string name="scan_hint">Press the scan button, or type the SN</string>
+    <string name="scan_hint">Press Scan (or the scan key), or type the SN</string>
     <string name="clear">Clear</string>
     <string name="scanner_unavailable">Scanner unavailable. Please type the SN.</string>
     <string name="take_photo">Take photo</string>
@@ -22,4 +22,5 @@
     <string name="discard_message">The last photo was not saved. It will be deleted if you continue. Tap Retry to save it instead.</string>
     <string name="discard_confirm">Discard</string>
     <string name="cancel">Cancel</string>
+    <string name="scan">Scan</string>
 </resources>

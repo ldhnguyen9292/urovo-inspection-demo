@@ -31,4 +31,12 @@ class UiStateTest {
         assertTrue(ready.canFinish)
         assertFalse(ready.copy(busy = true).canFinish)
     }
+
+    @Test
+    fun canScan_onlyWithScannerAndUnlockedSn() {
+        assertTrue(ready.canScan)
+        assertFalse(ready.copy(scannerAvailable = false).canScan)
+        assertFalse(ready.copy(canRetry = true).canScan)
+        assertFalse(ready.copy(busy = true).canScan)
+    }
 }
