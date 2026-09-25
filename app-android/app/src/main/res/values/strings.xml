@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Incoming Inspection</string>
+    <string name="folder_label">Save location</string>
+    <string name="folder_not_set">Not selected</string>
+    <string name="change_folder">Change</string>
+    <string name="choose_folder">Choose folder</string>
+    <string name="choose_folder_hint">Choose a folder to save to. Tip: open Documents and create a folder such as \"Inspection\".</string>
+    <string name="serial_number">Serial Number</string>
+    <string name="scan_hint">Press the scan button, or type the SN</string>
+    <string name="clear">Clear</string>
+    <string name="scanner_unavailable">Scanner unavailable. Please type the SN.</string>
+    <string name="take_photo">Take photo</string>
+    <string name="photos_count">Photos (%1$d)</string>
+    <string name="done_next">Done / Next</string>
+    <string name="saved">Photo saved</string>
+    <string name="save_failed">Save failed</string>
+    <string name="retry">Retry</string>
+    <string name="folder_lost">Save folder is no longer available. Please choose it again.</string>
+    <string name="camera_unavailable">No camera app found</string>
+    <string name="photo_empty">The camera returned no photo</string>
+    <string name="discard_title">Discard unsaved photo?</string>
+    <string name="discard_message">The last photo was not saved. It will be deleted if you continue. Tap Retry to save it instead.</string>
+    <string name="discard_confirm">Discard</string>
+    <string name="cancel">Cancel</string>
+</resources>

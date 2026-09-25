@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">進貨檢驗</string>
+    <string name="folder_label">儲存位置</string>
+    <string name="folder_not_set">尚未選擇</string>
+    <string name="change_folder">變更</string>
+    <string name="choose_folder">選擇資料夾</string>
+    <string name="choose_folder_hint">請選擇儲存資料夾。建議：開啟 Documents 並建立資料夾，例如「Inspection」。</string>
+    <string name="serial_number">序號 (Serial Number)</string>
+    <string name="scan_hint">按掃描鍵掃描條碼，或手動輸入序號</string>
+    <string name="clear">清除</string>
+    <string name="scanner_unavailable">掃描器無法使用，請手動輸入序號</string>
+    <string name="take_photo">拍照</string>
+    <string name="photos_count">已拍照片 (%1$d)</string>
+    <string name="done_next">完成 / 下一個</string>
+    <string name="saved">照片已儲存</string>
+    <string name="save_failed">儲存失敗</string>
+    <string name="retry">重試</string>
+    <string name="folder_lost">儲存資料夾無法使用，請重新選擇</string>
+    <string name="camera_unavailable">找不到相機程式</string>
+    <string name="photo_empty">相機未回傳照片</string>
+    <string name="discard_title">刪除未儲存的照片？</string>
+    <string name="discard_message">上一張照片尚未儲存，繼續將會刪除。若要保留，請按「重試」儲存。</string>
+    <string name="discard_confirm">刪除</string>
+    <string name="cancel">取消</string>
+</resources>
